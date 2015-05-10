@@ -4,3 +4,5 @@ packages/
 WebNumToLet/bower_components/
 WebNumToLet/node_modules/
 packages/
+bin/
+obj/
