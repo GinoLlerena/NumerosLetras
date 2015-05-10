@@ -1,0 +1,68 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" id="homeForm" name="homeForm" novalidate >
+
+            <div class="control-group">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Tipo</label>
+                    <label for="esNumber" class="col-sm-6 radio">
+                        <input id="esNumber" type="radio" ng-model="vm.number.type" value="0" />Spanish
+                    </label>
+                </div>
+                <div class="form-group">
+                        <label for="euNumber" class="col-sm-6 col-sm-offset-3 radio">
+                            <input id="euNumber" type="radio" ng-model="vm.number.type" value="1" />
+                            English
+                        </label>
+                </div>
+                <div class="form-group">
+                        <label for="rmNumber" class="col-sm-6 col-sm-offset-3 radio">
+                            <input id="rmNumber" type="radio" ng-model="vm.number.type" value="2" />
+                            Roman
+                        </label>
+                </div>
+            </div>
+             <div class=" form-group">
+                 <label for="chDecimal" class="col-sm-6 col-sm-offset-3 control-label">Decimales:
+                     <input id="chDecimal" name="chDecimal"  type="checkbox" ng-model="vm.number.decimal" ng-change="vm.changePattern()"
+                            ng-true-value="1" ng-false-value="0">
+                 </label>
+
+             </div>
+            
+            <div class="form-group">
+                <label for="digitNumber" class="col-sm-3 control-label">Número</label>
+                <div class="col-sm-6">
+                    <input type="number" id="digitNumber" name="digitNumber" class="form-control"
+                           ng-model="vm.number.value" ng-required="true" placeholder="Número" ng-pattern="vm.pattern"   />
+                </div>
+                <p class="help-block" ng-if="homeForm.digitNumber.$error.required">El Número es Requerido</p>
+                <p class="help-block" ng-if="homeForm.digitNumber.$error.pattern">El Número es Invalido</p>
+            </div>
+            <div class="form-group">
+                <label for="digitToLetter" class="col-sm-3 control-label">Letras</label>
+                <div class="col-sm-6">
+                    <input type="text" id="nombreCompleto" name="digitToLetter" class="form-control"
+                           ng-model="vm.number.letter" ng-required="true" placeholder="Letras" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3 col-sm-3 col-sm-offset-3 col-md-offset-3">
+                    <button id="cancelButton" name="cancelButton" class="btn btn-danger"
+                            ng-click="vm.cancel()">
+                        <i class="glyphicon glyphicon-thumbs-down"></i> Limpiar
+                    </button>
+                    <button id="submitButton" name="submitButton" class="btn btn-primary" 
+                            ng-click="vm.ok()" >
+                        <i class="glyphicon glyphicon-thumbs-up"></i> Procesar
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
