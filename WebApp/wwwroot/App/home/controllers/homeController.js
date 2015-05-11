@@ -11,6 +11,8 @@ webApp.controller('homeController', function ( homeService) {
     vm.number.letter = '';
     vm.number.decimal = 0;
     vm.number.step = 1;
+    vm.number.min = 0;
+    vm.number.max = 99999999;
 
     function changePattern() {
 
@@ -20,6 +22,18 @@ webApp.controller('homeController', function ( homeService) {
             vm.pattern = /^\d+$/;
         else 
             vm.pattern = /^[0-9]+(\.[0-9]{1,2})?$/;
+    }
+
+    function validateLanguage() {
+
+        var value = vm.number.type;
+
+        switch (value) {
+            case "0": vm.number.max = (vm.number.decimal == 0 ? 99999999 : 99999999.99); break;
+            case "1": vm.number.max = (vm.number.decimal == 0 ? 99999999 : 99999999.99); break;
+            case "2": vm.number.max = 9999; vm.number.decimal = 0; break;
+        };
+        
     }
 
     function ok() {
@@ -51,4 +65,5 @@ webApp.controller('homeController', function ( homeService) {
     vm.ok = ok;
     vm.cancel = cancel;
     vm.changePattern = changePattern;
+    vm.validateLanguage = validateLanguage;
 });

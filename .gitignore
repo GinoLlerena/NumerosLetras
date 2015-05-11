@@ -1,5 +1,7 @@
 WebApp/bower_components/
 WebApp/node_modules/
+WebApp/lib/
+WebApp/bin/
 packages/
 WebNumToLet/
 packages/

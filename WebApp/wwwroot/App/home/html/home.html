@@ -6,18 +6,18 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Tipo</label>
                     <label for="esNumber" class="col-sm-6 radio">
-                        <input id="esNumber" type="radio" ng-model="vm.number.type" value="0" />Spanish
+                        <input id="esNumber" type="radio" ng-model="vm.number.type" value="0" ng-change="vm.validateLanguage()" />Spanish
                     </label>
                 </div>
                 <div class="form-group">
                         <label for="euNumber" class="col-sm-6 col-sm-offset-3 radio">
-                            <input id="euNumber" type="radio" ng-model="vm.number.type" value="1" />
+                            <input id="euNumber" type="radio" ng-model="vm.number.type" value="1" ng-change="vm.validateLanguage()" />
                             English
                         </label>
                 </div>
                 <div class="form-group">
                         <label for="rmNumber" class="col-sm-6 col-sm-offset-3 radio">
-                            <input id="rmNumber" type="radio" ng-model="vm.number.type" value="2" />
+                            <input id="rmNumber" type="radio" ng-model="vm.number.type" value="2" ng-change="vm.validateLanguage()" />
                             Roman
                         </label>
                 </div>
@@ -25,7 +25,7 @@
              <div class=" form-group">
                  <label for="chDecimal" class="col-sm-6 col-sm-offset-3 control-label">Decimales:
                      <input id="chDecimal" name="chDecimal"  type="checkbox" ng-model="vm.number.decimal" ng-change="vm.changePattern()"
-                            ng-true-value="1" ng-false-value="0">
+                            ng-true-value="1" ng-false-value="0" ng-disabled="vm.number.type == 2" >
                  </label>
 
              </div>
@@ -34,15 +34,16 @@
                 <label for="digitNumber" class="col-sm-3 control-label">Número</label>
                 <div class="col-sm-6">
                     <input type="number" id="digitNumber" name="digitNumber" class="form-control"
-                           ng-model="vm.number.value" ng-required="true" placeholder="Número" ng-pattern="vm.pattern"   />
+                           ng-model="vm.number.value" ng-required="true" placeholder="Número" ng-pattern="vm.pattern" max={{vm.number.max}}  />
                 </div>
                 <p class="help-block" ng-if="homeForm.digitNumber.$error.required">El Número es Requerido</p>
                 <p class="help-block" ng-if="homeForm.digitNumber.$error.pattern">El Número es Invalido</p>
+                <p class="help-block" ng-if="homeForm.digitNumber.$error.max">El Número excede el valor permitido.</p>
             </div>
             <div class="form-group">
                 <label for="digitToLetter" class="col-sm-3 control-label">Letras</label>
                 <div class="col-sm-6">
-                    <input type="text" id="nombreCompleto" name="digitToLetter" class="form-control"
+                    <textarea rows="4" type="text" id="nombreCompleto" name="digitToLetter" class="form-control"
                            ng-model="vm.number.letter" ng-required="true" placeholder="Letras" readonly />
                 </div>
             </div>
