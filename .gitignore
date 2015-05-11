@@ -1,8 +1,7 @@
 WebApp/bower_components/
 WebApp/node_modules/
 packages/
-WebNumToLet/bower_components/
-WebNumToLet/node_modules/
+WebNumToLet/
 packages/
 bin/
 obj/
