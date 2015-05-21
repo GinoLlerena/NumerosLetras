@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NumLetras", "NumLetras\NumLetras.xproj", "{118C7011-94B9-4F9B-9970-AF765E3D3709}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F217C049-C9FE-4117-B7C3-778875FAF24E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApp", "WebApp\WebApp.xproj", "{675CCA9C-8601-40DA-9357-D78A7EE2D638}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5EF5408B-470B-49B9-B302-21BA34493168}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NumLetras", "src\NumLetras\NumLetras.xproj", "{118C7011-94B9-4F9B-9970-AF765E3D3709}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApp", "src\WebApp\WebApp.xproj", "{675CCA9C-8601-40DA-9357-D78A7EE2D638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{118C7011-94B9-4F9B-9970-AF765E3D3709} = {F217C049-C9FE-4117-B7C3-778875FAF24E}
+		{675CCA9C-8601-40DA-9357-D78A7EE2D638} = {F217C049-C9FE-4117-B7C3-778875FAF24E}
 	EndGlobalSection
 EndGlobal
